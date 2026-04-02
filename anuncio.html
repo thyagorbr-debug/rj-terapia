@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anuncie na RJ Terapia</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f1115;
+      color: #f5f5f5;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      background:
+        radial-gradient(circle at top left, rgba(37, 211, 102, 0.18), transparent 35%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 25%),
+        linear-gradient(135deg, #0f1115, #171b22 55%, #0f1115);
+      padding: 90px 20px 100px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.08);
+      color: #d8d8d8;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+    }
+
+    header h1 {
+      font-size: 52px;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 20px;
+      color: #c7c7c7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: -40px auto 80px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #25d366, #179c49);
+      color: white;
+      border-radius: 22px;
+      padding: 26px;
+      text-align: center;
+      box-shadow: 0 18px 45px rgba(37, 211, 102, 0.25);
+      margin-bottom: 30px;
+    }
+
+    .banner h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .banner p {
+      font-size: 17px;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.25);
+    }
+
+    .card h3 {
+      font-size: 30px;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .card p {
+      color: #c5c5c5;
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .list-item {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #e7e7e7;
+      font-size: 15px;
+    }
+
+    .highlight {
+      margin-top: 24px;
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(37, 211, 102, 0.10);
+      border: 1px solid rgba(37, 211, 102, 0.22);
+      color: #7ff3a8;
+      font-weight: bold;
+      text-align: center;
+      font-size: 17px;
+    }
+
+    .side-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .mini-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.25);
+    }
+
+    .mini-card h4 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .mini-card p {
+      color: #c5c5c5;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(135deg, #25d366, #179c49);
+      color: white;
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-weight: bold;
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.20);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: rgba(255,255,255,0.06);
+      color: white;
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-weight: bold;
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 30px 20px;
+      text-align: center;
+      color: #a8a8a8;
+      background: #0b0d11;
+      font-size: 15px;
+    }
+
+    @media (max-width: 900px) {
+      header h1 {
+        font-size: 40px;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .banner h2 {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header {
+        padding: 70px 18px 90px;
+      }
+
+      header h1 {
+        font-size: 32px;
+      }
+
+      header p {
+        font-size: 17px;
+      }
+
+      .card h3 {
+        font-size: 24px;
+      }
+
+      .mini-card h4 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="hero-badge">Divulgação profissional na fase de lançamento</div>
+    <h1>Anuncie na RJ Terapia</h1>
+    <p>Ganhe visibilidade, destaque seus serviços e participe do início da plataforma com condições especiais para os primeiros anunciantes.</p>
+  </header>
+
+  <main class="container">
+    <section class="banner">
+      <h2>Os 10 primeiros anunciantes são grátis</h2>
+      <p>Aproveite a fase de lançamento e garanta sua presença na plataforma sem custo inicial.</p>
+    </section>
+
+    <section class="content">
+      <div class="card">
+        <h3>Como funciona</h3>
+        <p>
+          A RJ Terapia está abrindo espaço para novos anunciantes que desejam divulgar seus serviços de forma mais profissional e organizada.
+        </p>
+
+        <div class="list">
+          <div class="list-item">Envie suas informações pelo formulário</div>
+          <div class="list-item">Seu perfil será analisado antes da publicação</div>
+          <div class="list-item">Os primeiros anunciantes terão prioridade de entrada</div>
+          <div class="list-item">Os 10 primeiros anunciantes entram gratuitamente</div>
+        </div>
+
+        <div class="highlight">
+          Oferta de lançamento: primeiros 10 anunciantes gratuitos
+        </div>
+      </div>
+
+      <div class="side-box">
+        <div class="mini-card">
+          <h4>Informações solicitadas</h4>
+          <p>O formulário pode incluir nome de contato, bairro ou cidade, descrição dos serviços, limites do atendimento, WhatsApp e fotos.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6h4d-C_Isl9NkjuVNuc1y4GTKEZDPYG8djcJFAmxejKHTzQ/viewform?usp=header" target="_blank" class="btn">Preencher formulário</a>
+        </div>
+
+        <div class="mini-card">
+          <h4>Quer voltar?</h4>
+          <p>Retorne para a página inicial da plataforma e continue navegando pelos perfis em destaque.</p>
+          <a href="index.html" class="btn-secondary">Voltar para página inicial</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 RJ Terapia. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
