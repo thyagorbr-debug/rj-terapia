@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RJ Terapia</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -29,27 +30,12 @@
         linear-gradient(135deg, #0f1115, #171b22 55%, #0f1115);
       padding: 90px 20px 120px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
 
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.08);
-      color: #d8d8d8;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 14px;
-      margin-bottom: 24px;
-      backdrop-filter: blur(8px);
-    }
-
+    
     header h1 {
       font-size: 56px;
-      font-weight: bold;
       margin-bottom: 18px;
-      letter-spacing: -1px;
     }
 
     header p {
@@ -63,14 +49,10 @@
       max-width: 1150px;
       margin: -48px auto 70px;
       padding: 0 20px;
-      position: relative;
-      z-index: 2;
     }
 
     .search-section {
       background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
       border-radius: 22px;
       padding: 22px;
       display: grid;
@@ -84,19 +66,8 @@
       width: 100%;
       padding: 16px 18px;
       border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      background: rgba(255, 255, 255, 0.06);
-      color: #ffffff;
+      border: none;
       font-size: 15px;
-      outline: none;
-    }
-
-    .search-section input::placeholder {
-      color: #bdbdbd;
-    }
-
-    .search-section option {
-      color: #111;
     }
 
     .search-section button {
@@ -108,15 +79,23 @@
       font-size: 15px;
       font-weight: bold;
       cursor: pointer;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.25);
     }
 
-    .search-section button:hover,
-    .btn:hover,
-    .anuncie-btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
+    .promo-banner {
+      max-width: 1150px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+    }
+
+    .promo-box {
+      background: linear-gradient(135deg, #25d366, #179c49);
+      color: white;
+      border-radius: 20px;
+      padding: 22px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 22px;
+      box-shadow: 0 18px 45px rgba(37, 211, 102, 0.20);
     }
 
     .container {
@@ -133,93 +112,54 @@
     .section-header h2 {
       font-size: 38px;
       margin-bottom: 12px;
-      color: #ffffff;
-    }
-
-    .section-header p {
-      color: #b8b8b8;
-      font-size: 17px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 24px;
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255,255,255,0.04);
       border-radius: 22px;
-      padding: 26px;
+      padding: 24px;
       box-shadow: 0 18px 34px rgba(0, 0, 0, 0.25);
-      transition: transform 0.25s ease, border-color 0.25s ease;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(37, 211, 102, 0.30);
-    }
-
-    .card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .profile-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
       margin-bottom: 18px;
     }
 
-    .avatar {
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #25d366, #0f7f3d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      font-weight: bold;
-      color: white;
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
-    }
-
     .tag {
+      display: inline-block;
       font-size: 12px;
       padding: 8px 12px;
       border-radius: 999px;
       background: rgba(37, 211, 102, 0.12);
       color: #7ff3a8;
-      border: 1px solid rgba(37, 211, 102, 0.22);
+      margin-bottom: 16px;
     }
 
     .card h3 {
       font-size: 24px;
       margin-bottom: 8px;
-      color: #fff;
     }
 
-    .service {
-      color: #e7e7e7;
-      font-size: 17px;
-      margin-bottom: 8px;
-    }
-
-    .location {
-      color: #a8a8a8;
-      margin-bottom: 14px;
-      font-size: 15px;
-    }
-
-    .rating {
-      color: #ffd45a;
-      font-size: 18px;
-      margin-bottom: 14px;
+    .service,
+    .location,
+    .rating,
+    .price {
+      margin-bottom: 10px;
     }
 
     .price {
       font-size: 22px;
       font-weight: bold;
-      color: #ffffff;
-      margin-bottom: 18px;
     }
 
     .card-info {
@@ -232,76 +172,52 @@
     .chip {
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #d6d6d6;
+      background: rgba(255,255,255,0.06);
       font-size: 13px;
     }
 
     .btn {
-      display: inline-block;
-      width: 100%;
+      display: block;
       text-align: center;
       background: linear-gradient(135deg, #25d366, #179c49);
       color: white;
-      padding: 14px 18px;
+      padding: 14px;
       border-radius: 14px;
       font-weight: bold;
-      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.20);
     }
 
     .anuncie-section {
       margin-top: 80px;
-      background:
-        radial-gradient(circle at left center, rgba(37, 211, 102, 0.16), transparent 35%),
-        linear-gradient(135deg, #171b22, #11151b);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: #171b22;
       border-radius: 26px;
       padding: 42px 30px;
       display: grid;
       grid-template-columns: 1.4fr auto;
       gap: 20px;
       align-items: center;
-      box-shadow: 0 18px 34px rgba(0,0,0,0.22);
     }
 
     .anuncie-text h3 {
       font-size: 32px;
       margin-bottom: 12px;
-      color: white;
-    }
-
-    .anuncie-text p {
-      color: #c5c5c5;
-      font-size: 17px;
-      max-width: 720px;
     }
 
     .anuncie-btn {
-      background: #ffffff;
+      background: white;
       color: #111;
       padding: 16px 24px;
       border-radius: 14px;
       font-weight: bold;
-      white-space: nowrap;
-      box-shadow: 0 10px 24px rgba(255,255,255,0.10);
-      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
     footer {
-      border-top: 1px solid rgba(255,255,255,0.06);
       padding: 30px 20px;
       text-align: center;
       color: #a8a8a8;
       background: #0b0d11;
-      font-size: 15px;
     }
 
     @media (max-width: 900px) {
-      header h1 {
-        font-size: 42px;
-      }
-
       .search-section {
         grid-template-columns: 1fr;
       }
@@ -311,30 +227,8 @@
         text-align: center;
       }
 
-      .anuncie-text p {
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 560px) {
-      header {
-        padding: 70px 18px 100px;
-      }
-
       header h1 {
-        font-size: 34px;
-      }
-
-      header p {
-        font-size: 17px;
-      }
-
-      .section-header h2 {
-        font-size: 30px;
-      }
-
-      .anuncie-text h3 {
-        font-size: 26px;
+        font-size: 42px;
       }
     }
   </style>
@@ -343,90 +237,106 @@
 
   <header>
         <h1>RJ Terapia</h1>
-    <p>Encontre profissionais em destaque, explore serviços e descubra novas oportunidades de atendimento com uma experiência mais moderna e profissional.</p>
+    <p>Encontre profissionais, descubra serviços e anuncie sua presença na plataforma.</p>
   </header>
 
   <div class="search-wrapper">
     <div class="search-section">
       <input type="text" placeholder="Digite cidade, bairro ou região">
       <select>
-        <option>Selecione o tipo de serviço</option>
+        <option>Tipo de serviço</option>
         <option>Massagem Relaxante</option>
         <option>Drenagem Linfática</option>
         <option>Massagem Terapêutica</option>
-        <option>Atendimento Premium</option>
       </select>
       <button>Buscar</button>
+    </div>
+  </div>
+
+  <div class="promo-banner">
+    <div class="promo-box">
+      Os 10 primeiros anunciantes são grátis
     </div>
   </div>
 
   <main class="container">
     <div class="section-header">
       <h2>Profissionais em destaque</h2>
-      <p>Perfis com apresentação mais completa, visual elegante e contato rápido.</p>
     </div>
 
     <section class="cards">
+
       <article class="card">
-        <div class="card-top">
-          <div class="avatar">M</div>
-          <div class="tag">Destaque</div>
-        </div>
+        <img class="profile-img"
+          src="https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?q=80&w=687&auto=format&fit=crop"
+          alt="Maria Silva">
+
+        <div class="tag">Destaque</div>
+
         <h3>Maria Silva</h3>
         <div class="service">Massagem Relaxante</div>
         <div class="location">Copacabana - RJ</div>
         <div class="rating">★★★★★</div>
         <div class="price">A partir de R$ 80</div>
+
         <div class="card-info">
-          <span class="chip">Atendimento local</span>
           <span class="chip">Horário flexível</span>
           <span class="chip">Perfil verificado</span>
         </div>
+
         <a href="#" class="btn">Contato WhatsApp</a>
       </article>
 
       <article class="card">
-        <div class="card-top">
-          <div class="avatar">C</div>
-          <div class="tag">Premium</div>
-        </div>
-        <h3>Carlos Souza</h3>
+        <img class="profile-img"
+          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=688&auto=format&fit=crop"
+          alt="Carla Souza">
+
+        <div class="tag">Premium</div>
+
+        <h3>Carla Souza</h3>
         <div class="service">Drenagem Linfática</div>
         <div class="location">Tijuca - RJ</div>
         <div class="rating">★★★★☆</div>
         <div class="price">A partir de R$ 100</div>
+
         <div class="card-info">
-          <span class="chip">Sessões agendadas</span>
-          <span class="chip">Atendimento dedicado</span>
           <span class="chip">Boa avaliação</span>
+          <span class="chip">Atendimento dedicado</span>
         </div>
+
         <a href="#" class="btn">Contato WhatsApp</a>
       </article>
 
       <article class="card">
-        <div class="card-top">
-          <div class="avatar">A</div>
-          <div class="tag">Novo perfil</div>
-        </div>
+        <img class="profile-img"
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=687&auto=format&fit=crop"
+          alt="Ana Martins">
+
+        <div class="tag">Novo perfil</div>
+
         <h3>Ana Martins</h3>
         <div class="service">Massagem Terapêutica</div>
         <div class="location">Centro - RJ</div>
         <div class="rating">★★★★★</div>
         <div class="price">A partir de R$ 120</div>
+
         <div class="card-info">
-          <span class="chip">Centro do Rio</span>
           <span class="chip">Ambiente reservado</span>
-          <span class="chip">Atendimento premium</span>
+          <span class="chip">Premium</span>
         </div>
+
         <a href="#" class="btn">Contato WhatsApp</a>
       </article>
+
     </section>
 
     <section class="anuncie-section">
       <div class="anuncie-text">
         <h3>Quer anunciar na RJ Terapia?</h3>
-        <p>Ganhe visibilidade, apresente seus serviços de forma profissional e participe da fase inicial da plataforma com uma página pensada para conversão e destaque.</p>
+        <p>Participe do início da plataforma e aproveite a promoção de lançamento.</p>
       </div>
+
       <a href="anuncio.html" class="anuncie-btn">Anuncie Aqui</a>
     </section>
   </main>
