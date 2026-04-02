@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RJ Terapia</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 42px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .search-section {
+      max-width: 900px;
+      margin: -30px auto 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    input, select {
+      padding: 14px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      padding: 14px 24px;
+      background: #25d366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .rating {
+      color: #f4b400;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+    }
+
+    .anuncie {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    .anuncie a {
+      background: #222;
+      color: white;
+      padding: 14px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+      background: #1f1f1f;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>RJ Terapia</h1>
+  <p>Profissionais qualificados perto de você</p>
+</header>
+
+<div class="search-section">
+  <input type="text" placeholder="Cidade ou bairro">
+  <select>
+    <option>Tipo de serviço</option>
+    <option>Relaxante</option>
+    <option>Drenagem</option>
+    <option>Terapêutica</option>
+  </select>
+  <button>Buscar</button>
+</div>
+
+<h2 class="section-title">Profissionais em destaque</h2>
+
+<div class="cards">
+  <div class="card">
+    <h3>Maria Silva</h3>
+    <p>Massagem Relaxante</p>
+    <p>Copacabana - RJ</p>
+    <div class="rating">★★★★★</div>
+    <div class="price">A partir de R$ 80</div>
+    <a href="#" class="btn">Contato WhatsApp</a>
+  </div>
+
+  <div class="card">
+    <h3>Carlos Souza</h3>
+    <p>Drenagem Linfática</p>
+    <p>Tijuca - RJ</p>
+    <div class="rating">★★★★☆</div>
+    <div class="price">A partir de R$ 100</div>
+    <a href="#" class="btn">Contato WhatsApp</a>
+  </div>
+</div>
+
+<div class="anuncie">
+  <a href="anuncio.html">Anuncie Aqui</a>
+</div>
+
+<footer>
+  © 2026 RJ Terapia
+</footer>
+
+</body>
+</html>
